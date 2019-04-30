@@ -4,5 +4,5 @@ title: A tensorflow self-driving car
 ---
 
 I use the udacity self-driving car simulator to test my skyll in tensorflow
-![_self-driving-car-sim]({{ site.baseurl }}/images/self-driving-car-sim.png)
+![_self-driving-car-sim]({{ site.baseurl }}/images/sdcs.png)
 
