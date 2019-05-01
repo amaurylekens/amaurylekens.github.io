@@ -1,13 +1,10 @@
 ---
 layout: post
-title: A tensorflow self-driving car
+title: DIY robotic gripper
 ---
 
-I use the udacity self-driving car simulator to test my skyll in tensorflow
+I print a gripper and make him move with arduino
 
 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 
-![_self-driving-car-sim]({{ site.baseurl }}/images/sdcs.png)
-
-[github](https://github.com/amaurylekens/tensorflow-self-driving-car) 
 
