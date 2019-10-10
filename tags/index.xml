@@ -6,6 +6,7 @@
     <description>Recent content in Tags on Amaury Lekens</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Thu, 10 Oct 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -13,7 +14,7 @@
     <item>
       <title>scraping</title>
       <link>/tags/scraping/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 10 Oct 2019 00:00:00 +0000</pubDate>
       
       <guid>/tags/scraping/</guid>
       <description></description>
@@ -22,7 +23,7 @@
     <item>
       <title>stats</title>
       <link>/tags/stats/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 10 Oct 2019 00:00:00 +0000</pubDate>
       
       <guid>/tags/stats/</guid>
       <description></description>
