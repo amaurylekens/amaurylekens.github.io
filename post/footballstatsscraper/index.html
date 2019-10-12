@@ -70,6 +70,33 @@ The first solution I considered was to look for a database or an opensource API 
 <div class="container">
 
   <header class="header">
+  <script type="application/ld+json">
+{
+    "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "\/"
+    },
+    "articleSection" : "post",
+    "name" : "A football stats scraper",
+    "headline" : "A football stats scraper",
+    "description" : "This python program allow to recuperate football stats from the web by using selenium",
+    "inLanguage" : "en-US",
+    "author" : "",
+    "creator" : "",
+    "publisher": "",
+    "accountablePerson" : "",
+    "copyrightHolder" : "",
+    "copyrightYear" : "2019",
+    "datePublished": "2019-10-10 00:00:00 \x2b0000 UTC",
+    "dateModified" : "2019-10-10 00:00:00 \x2b0000 UTC",
+    "url" : "\/post\/footballstatsscraper\/",
+    "wordCount" : "401",
+    "keywords" : [ "scraping","stats","Blog" ]
+}
+</script>
+
   <div class="header__inner">
     <div class="header__logo">
       <a href="/">
@@ -155,7 +182,7 @@ The first solution I considered was to look for a database or an opensource API 
 <i class="fas  fa-folder-open "></i>
  <a href="https://github.com/amaurylekens/FootballStatsScraper">repo</a></p>
 
-<h2 id="motivations">Motivations</h2>
+<h1 id="motivations">Motivations</h1>
 
 <p>I have often wanted to have a statistics dataset of football matches to be able to apply my statistics courses in a domain that I appreciate and not on the datasets provided by software like R or Python (mpg, iris, .. .).</p>
 
@@ -169,7 +196,7 @@ The first solution I considered was to look for a database or an opensource API 
 <li>It&rsquo;s free</li>
 </ul>
 
-<h2 id="goals">Goals</h2>
+<h1 id="goals">Goals</h1>
 
 <p>The goal of the program is to retrieve tables of this style from the web :</p>
 
@@ -236,7 +263,11 @@ The first solution I considered was to look for a database or an opensource API 
 <li>Each match is identified by a unique identifier and its stats are accessible through this one</li>
 </ul>
 
-<h2 id="implementation">Implementation</h2>
+<h1 id="technology">Technology</h1>
+
+<p>To easily scrape into python, I use the selenium package that uses a headless version of chrome to access the web page. To use this package, you must download <em>chromedriver</em> available <a href="https://chromedriver.chromium.org/downloads">here</a>.</p>
+
+<h1 id="implementation">Implementation</h1>
 
 <p>The software is divided into two main functions :</p>
 
@@ -245,7 +276,38 @@ The first solution I considered was to look for a database or an opensource API 
 <li>A function that retrieves the statistics of a match from its id</li>
 </ul>
 
-<h3 id="retrieve-match-ids">Retrieve match ids</h3>
+<h5 id="retrieve-match-ids">Retrieve match ids</h5>
+
+<p>I wrote a python function that from an <em>flashscore</em> url that ends with <em>/results/</em> returns a match id list.</p>
+
+<p><img src="/function1.png#center" alt="function_1" /></p>
+
+<p>The first step was to retrieve the web page linked to the url, which is realized by the following line of code:</p>
+
+<pre><code class="language-python">    driver.get(url)
+    WebDriverWait(driver, 20).until(
+    	EC.presence_of_element_located((By.CLASS_NAME, &quot;sportName&quot;)))
+</code></pre>
+
+<p>This code retrieves the html code of the web page and waits for the javascript to run (it generates essential HTML)</p>
+
+<p>On the site we can see that not all games are displayed directly. You can display more by pressing the <em>show more matches</em> button.</p>
+
+<p><img src="/more.png#center" alt="more" /></p>
+
+<p>What is achieved by this code :</p>
+
+<pre><code class="language-python">    while True:
+        more_link = driver.find_elements_by_class_name(&quot;event__more--static&quot;)
+        if more_link == []:
+            break
+        driver.execute_script(&quot;arguments[0].click();&quot;, more_link[0])
+        time.sleep(wait_time)
+</code></pre>
+
+<h5 id="retrieve-stats-with-a-id">Retrieve stats with a id</h5>
+
+<p><img src="/function2.png#center" alt="function_2" /></p>
 
   </div>
   
