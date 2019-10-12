@@ -12,12 +12,13 @@
     
     
     <item>
-      <title>A football stat scraper</title>
-      <link>/post/hello/</link>
+      <title>A football stats scraper</title>
+      <link>/post/footballstatsscraper/</link>
       <pubDate>Thu, 10 Oct 2019 00:00:00 +0000</pubDate>
       
-      <guid>/post/hello/</guid>
-      <description>Motivations I have often wanted to have a statistics dataset of football matches to be able to apply my statistics courses in a domain that I appreciate and not on the datasets provided by software like R or Python (mpg, iris, .. .).
+      <guid>/post/footballstatsscraper/</guid>
+      <description>repo
+Motivations I have often wanted to have a statistics dataset of football matches to be able to apply my statistics courses in a domain that I appreciate and not on the datasets provided by software like R or Python (mpg, iris, .. .).
 The first solution I considered was to look for a database or an opensource API containing this type of data. I found several but none satisfied me (size insufficient, not free, &amp;hellip;).</description>
     </item>
     
@@ -29,6 +30,18 @@ The first solution I considered was to look for a database or an opensource API 
       <guid>/about/</guid>
       <description>Hi there I&amp;rsquo;m Amaury Lekens and this website presents my personal projects in data science, machine learning, robotics, &amp;hellip;.
 This website is powered by Hugo and use the theme terminal by panr. Site is hosted on github.io</description>
+    </item>
+    
+    <item>
+      <title>Projects</title>
+      <link>/projects/</link>
+      <pubDate>Thu, 10 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/projects/</guid>
+      <description>Projects This page lists all the projects I&amp;rsquo;m working on
+football stats scraper Python program that can retrieve statistics from the flashscore site
+Repo
+robotic gripper A robotic hand printed and controlled with arduino</description>
     </item>
     
   </channel>

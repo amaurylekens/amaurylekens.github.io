@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/post/hello/</loc>
+    <loc>/post/footballstatsscraper/</loc>
     <lastmod>2019-10-10T00:00:00+00:00</lastmod>
   </url>
   
@@ -19,6 +19,11 @@
   
   <url>
     <loc>/post/</loc>
+    <lastmod>2019-10-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/projects/</loc>
     <lastmod>2019-10-10T00:00:00+00:00</lastmod>
   </url>
   
