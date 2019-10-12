@@ -92,7 +92,7 @@ The first solution I considered was to look for a database or an opensource API 
     "datePublished": "2019-10-10 00:00:00 \x2b0000 UTC",
     "dateModified" : "2019-10-10 00:00:00 \x2b0000 UTC",
     "url" : "\/post\/footballstatsscraper\/",
-    "wordCount" : "401",
+    "wordCount" : "479",
     "keywords" : [ "scraping","stats","Blog" ]
 }
 </script>
@@ -303,6 +303,22 @@ The first solution I considered was to look for a database or an opensource API 
             break
         driver.execute_script(&quot;arguments[0].click();&quot;, more_link[0])
         time.sleep(wait_time)
+</code></pre>
+
+<p>The code executes the javascript associated with the button and waits some seconds</p>
+
+<p>I then identified in the HTML an element that allowed to identify each match individually</p>
+
+<pre><code class="language-html">&lt;div id=&quot;g_1_GE5BMPAg&quot; title=&quot;Click for match detail!&quot; 
+class=&quot;event__match event__match--static event__match--twoLine&quot;&gt;...&lt;/div&gt;
+</code></pre>
+
+<p>This element is the id attribute of a <em>&lt;div&gt;</em> tag that each match has in the HTML.</p>
+
+<p>In python we easily retrieve these ids thanks to the name of the class of these tags.</p>
+
+<pre><code class="language-python">    match_ids = [match.get_attribute(&quot;id&quot;)[4:] for
+                 match in driver.find_elements_by_class_name(&quot;event__match--static&quot;)]
 </code></pre>
 
 <h5 id="retrieve-stats-with-a-id">Retrieve stats with a id</h5>
