@@ -18,7 +18,9 @@
       
       <guid>/posts/roboticgripper/</guid>
       <description>repo
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor.</description>
+Printing of the robotic hand The print of the robotic hand was very simple. I just retrieved a template from the site thingiverse. We can find the print files here.
+Control of the robotic hand The arm integrates 6 servo motor and a step motor. To control these engines we use an arduino mega.
+To separate the power of the control signals, I made an electronic card with L293DNE chips.</description>
     </item>
     
     <item>
