@@ -6,10 +6,37 @@
     <description>Recent content in Tags on Amaury Lekens</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 10 Oct 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 11 Oct 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>3D printing</title>
+      <link>/tags/3d-printing/</link>
+      <pubDate>Fri, 11 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/3d-printing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>arduino</title>
+      <link>/tags/arduino/</link>
+      <pubDate>Fri, 11 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/arduino/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>robotic</title>
+      <link>/tags/robotic/</link>
+      <pubDate>Fri, 11 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/robotic/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>scraping</title>

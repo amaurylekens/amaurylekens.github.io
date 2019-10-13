@@ -12,11 +12,11 @@
     
     
     <item>
-      <title>A football stats scraper</title>
-      <link>/post/footballstatsscraper/</link>
+      <title>A Football Stats Scraper</title>
+      <link>/posts/footballstatsscraper/</link>
       <pubDate>Thu, 10 Oct 2019 00:00:00 +0000</pubDate>
       
-      <guid>/post/footballstatsscraper/</guid>
+      <guid>/posts/footballstatsscraper/</guid>
       <description>repo
 Motivations I have often wanted to have a statistics dataset of football matches to be able to apply my statistics courses in a domain that I appreciate and not on the datasets provided by software like R or Python (mpg, iris, .. .).
 The first solution I considered was to look for a database or an opensource API containing this type of data. I found several but none satisfied me (size insufficient, not free, &amp;hellip;).</description>
