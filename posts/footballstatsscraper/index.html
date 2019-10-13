@@ -92,7 +92,7 @@ The first solution I considered was to look for a database or an opensource API 
     "datePublished": "2019-10-10 00:00:00 \x2b0000 UTC",
     "dateModified" : "2019-10-10 00:00:00 \x2b0000 UTC",
     "url" : "\/posts\/footballstatsscraper\/",
-    "wordCount" : "499",
+    "wordCount" : "595",
     "keywords" : [ "scraping","stats","Blog" ]
 }
 </script>
@@ -291,11 +291,7 @@ The first solution I considered was to look for a database or an opensource API 
 
 <p>This code retrieves the html code of the web page and waits for the javascript to run (it generates essential HTML)</p>
 
-<p>On the site we can see that not all games are displayed directly. You can display more by pressing the <em>show more matches</em> button.</p>
-
-<p><img src="/more.png#center" alt="more" /></p>
-
-<p>What is achieved by this code :</p>
+<p>On the site we can see that not all games are displayed directly. You can display more by pressing the <em>show more matches</em> button. What is achieved by this code :</p>
 
 <pre><code class="language-python">    while True:
         more_link = driver.find_elements_by_class_name(&quot;event__more--static&quot;)
@@ -325,7 +321,30 @@ class=&quot;event__match event__match--static event__match--twoLine&quot;&gt;...
 
 <h5 id="retrieve-stats-with-a-id">Retrieve stats with a id</h5>
 
+<p>I wrote a second python function that allows to get the stats of a match from his id.</p>
+
 <p><img src="/function2.png#center" alt="function_2" /></p>
+
+<p>The first step is to load the page and wait for the javascript to run.</p>
+
+<pre><code class="language-python">    match_path = &quot;{}/#match-statistics;0&quot;.format(match_id)
+    match_path = &quot;https://www.flashscore.com/match/{}&quot;.format(match_path)
+    driver.get(match_path)
+    WebDriverWait(driver, 60).until(EC.presence_of_element_located(
+        (By.ID, &quot;tab-statistics-0-statistic&quot;)))
+</code></pre>
+
+<p>Then you have to get the names of stats and the values ​​of these stats for both teams.</p>
+
+<pre><code class="language-python">        stat_titles = [stat.text for stat in
+                       driver.find_elements_by_class_name(&quot;statText--titleValue&quot;)]
+        home_stats = [home_stat.text for home_stat in
+                      driver.find_elements_by_class_name(&quot;statText--homeValue&quot;)]
+        away_stats = [away_stat.text for away_stat in
+                      driver.find_elements_by_class_name(&quot;statText--awayValue&quot;)]
+</code></pre>
+
+<p>Then we select the statistics we need in the set of statistics retrieved.</p>
 
   </div>
   
