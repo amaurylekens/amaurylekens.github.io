@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Amaury Lekens</title>
+    <link>amaurylekens.github.io/post/</link>
+    <description>Recent content in Posts on Amaury Lekens</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-uk</language>
+    <lastBuildDate>Mon, 21 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="amaurylekens.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Neo4j and mongodb football database</title>
+      <link>amaurylekens.github.io/post/football-database/</link>
+      <pubDate>Mon, 21 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>amaurylekens.github.io/post/football-database/</guid>
+      <description>repo
+Printing of the robotic hand $$v = \begin{bmatrix} v_1 \
+v_2 \end{bmatrix} \qquad \qquad w = \begin{bmatrix} w_1 \
+w_2 \end{bmatrix} \qquad\qquad v + w = \begin{bmatrix} v_1 + w_1 \
+v_2 + w_2 \end{bmatrix}$$
+The print of the robotic hand was very simple. I just retrieved a template from the site thingiverse. We can find the print files here.
+Control of the robotic hand The arm integrates 6 servo motor and a step motor.</description>
+    </item>
+    
+    <item>
+      <title>ALPR system</title>
+      <link>amaurylekens.github.io/post/alpr-system/</link>
+      <pubDate>Tue, 11 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>amaurylekens.github.io/post/alpr-system/</guid>
+      <description>repo
+Printing of the robotic hand $$v = \begin{bmatrix} v_1 \
+v_2 \end{bmatrix} \qquad \qquad w = \begin{bmatrix} w_1 \
+w_2 \end{bmatrix} \qquad\qquad v + w = \begin{bmatrix} v_1 + w_1 \
+v_2 + w_2 \end{bmatrix}$$
+The print of the robotic hand was very simple. I just retrieved a template from the site thingiverse. We can find the print files here.
+Control of the robotic hand The arm integrates 6 servo motor and a step motor.</description>
+    </item>
+    
+    <item>
+      <title>Robotic Hand Gripper</title>
+      <link>amaurylekens.github.io/post/robotic-hand-gripper/</link>
+      <pubDate>Fri, 11 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>amaurylekens.github.io/post/robotic-hand-gripper/</guid>
+      <description>repo
+Printing of the robotic hand $$v = \begin{bmatrix} v_1 \
+v_2 \end{bmatrix} \qquad \qquad w = \begin{bmatrix} w_1 \
+w_2 \end{bmatrix} \qquad\qquad v + w = \begin{bmatrix} v_1 + w_1 \
+v_2 + w_2 \end{bmatrix}$$
+The print of the robotic hand was very simple. I just retrieved a template from the site thingiverse. We can find the print files here.
+Control of the robotic hand The arm integrates 6 servo motor and a step motor.</description>
+    </item>
+    
+    <item>
+      <title>A Football Stats Scraper</title>
+      <link>amaurylekens.github.io/post/a-football-stats-scraper/</link>
+      <pubDate>Thu, 10 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>amaurylekens.github.io/post/a-football-stats-scraper/</guid>
+      <description>repo
+Motivations I have often wanted to have a statistics dataset of football matches to be able to apply my statistics courses in a domain that I appreciate and not on the datasets provided by software like R or Python (mpg, iris, .. .).
+The first solution I considered was to look for a database or an opensource API containing this type of data. I found several but none satisfied me (size insufficient, not free, &amp;hellip;).</description>
+    </item>
+    
+  </channel>
+</rss>

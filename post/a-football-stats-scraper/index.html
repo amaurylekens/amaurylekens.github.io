@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>A Football Stats Scraper :: Amaury Lekens</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="repo
+Motivations I have often wanted to have a statistics dataset of football matches to be able to apply my statistics courses in a domain that I appreciate and not on the datasets provided by software like R or Python (mpg, iris, .. .).
+The first solution I considered was to look for a database or an opensource API containing this type of data. I found several but none satisfied me (size insufficient, not free, &amp;hellip;)." />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="amaurylekens.github.io/post/a-football-stats-scraper/" />
+
+
+
+
+<link rel="stylesheet" href="amaurylekens.github.io/assets/style.css">
+
+  <link rel="stylesheet" href="amaurylekens.github.io/assets/green.css">
+
+
+
+
+
+
+<link rel="apple-touch-icon" href="amaurylekens.github.io/img/apple-touch-icon-192x192.png">
+
+  <link rel="shortcut icon" href="amaurylekens.github.io/img/favicon/green.png">
+
+
+
+<meta name="twitter:card" content="summary" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="A Football Stats Scraper">
+<meta property="og:description" content="This python program allow to recuperate football stats from the web by using selenium" />
+<meta property="og:url" content="amaurylekens.github.io/post/a-football-stats-scraper/" />
+<meta property="og:site_name" content="Amaury Lekens" />
+
+  
+    <meta property="og:image" content="amaurylekens.github.io/img/favicon/green.png">
+  
+
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+
+  <meta property="article:published_time" content="2019-10-10 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="green">
+
+
+<div class="container headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    Amaury Lekens
+  </div>
+</a>
+
+    </div>
+    <div class="menu-trigger">menu</div>
+  </div>
+  
+    <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="amaurylekens.github.io/about">About</a></li>
+        
+      
+        
+          <li><a href="amaurylekens.github.io/projects">Projects</a></li>
+        
+      
+      
+    
+
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="amaurylekens.github.io/about">About</a></li>
+      
+    
+      
+        <li><a href="amaurylekens.github.io/projects">Projects</a></li>
+      
+    
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<div class="post">
+  <h1 class="post-title">
+    <a href="amaurylekens.github.io/post/a-football-stats-scraper/">A Football Stats Scraper</a></h1>
+  <div class="post-meta">
+    
+      <span class="post-date">
+        2019-10-10 
+      </span>
+    
+    
+  </div>
+
+  
+
+  
+
+  
+
+  <div class="post-content"><div>
+        <p><a href="https://github.com/amaurylekens/FootballStatsScraper">repo</a></p>
+<h1 id="motivations">Motivations<a href="#motivations" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>I have often wanted to have a statistics dataset of football matches to be able to apply my statistics courses in a domain that I appreciate and not on the datasets provided by software like R or Python (mpg, iris, .. .).</p>
+<p>The first solution I considered was to look for a database or an opensource API containing this type of data. I found several but none satisfied me (size insufficient, not free, &hellip;). So I decided to build myself this database with scraping.</p>
+<p>The advantages of this method are multiple :</p>
+<ul>
+<li>I get the stats I want</li>
+<li>My dataset increases its size every week when games are added</li>
+<li>It&rsquo;s free</li>
+</ul>
+<h1 id="goals">Goals<a href="#goals" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>The goal of the program is to retrieve tables of this style from the web :</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Goals T1</th>
+<th style="text-align:center">Goals T2</th>
+<th style="text-align:center">Posse T1</th>
+<th style="text-align:center">Posse T2</th>
+<th style="text-align:center">Tirs T1</th>
+<th style="text-align:center">Tirs T2</th>
+<th style="text-align:center">&hellip;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">45</td>
+<td style="text-align:center">55</td>
+<td style="text-align:center">6</td>
+<td style="text-align:center">8</td>
+<td style="text-align:center">&hellip;</td>
+</tr>
+<tr>
+<td style="text-align:center">3</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">60</td>
+<td style="text-align:center">40</td>
+<td style="text-align:center">9</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">&hellip;</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">52</td>
+<td style="text-align:center">48</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">&hellip;</td>
+</tr>
+<tr>
+<td style="text-align:center">&hellip;</td>
+<td style="text-align:center">&hellip;</td>
+<td style="text-align:center">&hellip;</td>
+<td style="text-align:center">&hellip;</td>
+<td style="text-align:center">&hellip;</td>
+<td style="text-align:center">&hellip;</td>
+<td style="text-align:center">&hellip;</td>
+</tr>
+</tbody>
+</table>
+<p>It is on the site <a href="https://www.flashscore.com/">flashscore</a> that I will realize the scraping. It has several advantages :</p>
+<ul>
+<li>It offers a large number of statistics for a large number of matches</li>
+<li>Each match is identified by a unique identifier and its stats are accessible through this one</li>
+</ul>
+<h1 id="technology">Technology<a href="#technology" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>To easily scrape into python, I use the selenium package that uses a headless version of chrome to access the web page. To use this package, you must download <em>chromedriver</em> available <a href="https://chromedriver.chromium.org/downloads">here</a>.</p>
+<h1 id="implementation">Implementation<a href="#implementation" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>The software is divided into two main functions :</p>
+<ul>
+<li>A function that retrieves match ids from a flashscore url.</li>
+<li>A function that retrieves the statistics of a match from its id</li>
+</ul>
+<h5 id="retrieve-match-ids">Retrieve match ids<a href="#retrieve-match-ids" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h5>
+<p>I wrote a python function that from an <em>flashscore</em> url that ends with <em>/results/</em> returns a match id list.</p>
+<p><img src="/function1.png#center" alt="function_1"></p>
+<p>The first step was to retrieve the web page linked to the url, which is realized by the following line of code:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">    driver<span style="color:#f92672">.</span>get(url)
+    WebDriverWait(driver, <span style="color:#ae81ff">20</span>)<span style="color:#f92672">.</span>until(
+    	EC<span style="color:#f92672">.</span>presence_of_element_located((By<span style="color:#f92672">.</span>CLASS_NAME, <span style="color:#e6db74">&#34;sportName&#34;</span>)))
+</code></pre></div><p>This code retrieves the html code of the web page and waits for the javascript to run (it generates essential HTML)</p>
+<p>On the site we can see that not all games are displayed directly. You can display more by pressing the <em>show more matches</em> button. What is achieved by this code :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">    <span style="color:#66d9ef">while</span> True:
+        more_link <span style="color:#f92672">=</span> driver<span style="color:#f92672">.</span>find_elements_by_class_name(<span style="color:#e6db74">&#34;event__more--static&#34;</span>)
+        <span style="color:#66d9ef">if</span> more_link <span style="color:#f92672">==</span> []:
+            <span style="color:#66d9ef">break</span>
+        driver<span style="color:#f92672">.</span>execute_script(<span style="color:#e6db74">&#34;arguments[0].click();&#34;</span>, more_link[<span style="color:#ae81ff">0</span>])
+        time<span style="color:#f92672">.</span>sleep(wait_time)
+</code></pre></div><p>The code executes the javascript associated with the button and waits some seconds</p>
+<p>I then identified in the HTML an element that allowed to identify each match individually</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;g_1_GE5BMPAg&#34;</span> <span style="color:#a6e22e">title</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Click for match detail!&#34;</span> 
+<span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;event__match event__match--static event__match--twoLine&#34;</span>&gt;...&lt;/<span style="color:#f92672">div</span>&gt;
+</code></pre></div><p>This element is the id attribute of a <em>&lt;div&gt;</em> tag that each match has in the HTML.</p>
+<p>In python we easily retrieve these ids thanks to the name of the class of these tags.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">    match_ids <span style="color:#f92672">=</span> [match<span style="color:#f92672">.</span>get_attribute(<span style="color:#e6db74">&#34;id&#34;</span>)[<span style="color:#ae81ff">4</span>:] <span style="color:#66d9ef">for</span>
+                 match <span style="color:#f92672">in</span> driver<span style="color:#f92672">.</span>find_elements_by_class_name(<span style="color:#e6db74">&#34;event__match--static&#34;</span>)]
+</code></pre></div><p>By nesting these elements we can achieve the purpose of the function. The complete code is available in the repo.</p>
+<h5 id="retrieve-stats-with-a-id">Retrieve stats with a id<a href="#retrieve-stats-with-a-id" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h5>
+<p>I wrote a second python function that allows to get the stats of a match from his id.</p>
+<p><img src="/function2.png#center" alt="function_2"></p>
+<p>The first step is to load the page and wait for the javascript to run.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">    match_path <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;{}/#match-statistics;0&#34;</span><span style="color:#f92672">.</span>format(match_id)
+    match_path <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://www.flashscore.com/match/{}&#34;</span><span style="color:#f92672">.</span>format(match_path)
+    driver<span style="color:#f92672">.</span>get(match_path)
+    WebDriverWait(driver, <span style="color:#ae81ff">60</span>)<span style="color:#f92672">.</span>until(EC<span style="color:#f92672">.</span>presence_of_element_located(
+        (By<span style="color:#f92672">.</span>ID, <span style="color:#e6db74">&#34;tab-statistics-0-statistic&#34;</span>)))
+</code></pre></div><p>Then you have to get the names of stats and the values of these stats for both teams.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">        stat_titles <span style="color:#f92672">=</span> [stat<span style="color:#f92672">.</span>text <span style="color:#66d9ef">for</span> stat <span style="color:#f92672">in</span>
+                       driver<span style="color:#f92672">.</span>find_elements_by_class_name(<span style="color:#e6db74">&#34;statText--titleValue&#34;</span>)]
+        home_stats <span style="color:#f92672">=</span> [home_stat<span style="color:#f92672">.</span>text <span style="color:#66d9ef">for</span> home_stat <span style="color:#f92672">in</span>
+                      driver<span style="color:#f92672">.</span>find_elements_by_class_name(<span style="color:#e6db74">&#34;statText--homeValue&#34;</span>)]
+        away_stats <span style="color:#f92672">=</span> [away_stat<span style="color:#f92672">.</span>text <span style="color:#66d9ef">for</span> away_stat <span style="color:#f92672">in</span>
+                      driver<span style="color:#f92672">.</span>find_elements_by_class_name(<span style="color:#e6db74">&#34;statText--awayValue&#34;</span>)]
+</code></pre></div><p>Then we select the statistics we need in the set of statistics retrieved.</p>
+<p>These two functions used one after the other allow to build the tables from urls and the names of the desired stats.</p>
+
+      </div></div>
+
+  
+  
+<div class="pagination">
+    <div class="pagination__title">
+        <span class="pagination__title-h">Read other posts</span>
+        <hr />
+    </div>
+    <div class="pagination__buttons">
+        
+        <span class="button previous">
+            <a href="amaurylekens.github.io/post/robotic-hand-gripper/">
+                <span class="button__icon">←</span>
+                <span class="button__text">Robotic Hand Gripper</span>
+            </a>
+        </span>
+        
+        
+    </div>
+</div>
+
+  
+
+  
+
+</div>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2020 Powered by <a href="http://gohugo.io">Hugo</a></span>
+    
+        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+<script src="amaurylekens.github.io/assets/main.js"></script>
+<script src="amaurylekens.github.io/assets/prism.js"></script>
+
+
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>
