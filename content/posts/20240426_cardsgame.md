@@ -1,5 +1,5 @@
 +++
-title = "A cards game python package"
+title = "Pydecklib: a cards game python package"
 date = "2024-04-26T00:56:24+01:00"
 author = "amaurylekens"
 authorTwitter = "" #do not include @
